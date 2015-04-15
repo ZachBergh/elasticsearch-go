@@ -5,7 +5,7 @@ import (
 	"github.com/magicshui/goutils/requests"
 )
 
-func (this *EsClient) Search() (Response, string) {
+func (this *EsClient) Search() (Response, error) {
 
 	var response Response
 	url := this.Domain + "/" + this.Index + "/" + this.Type + "/_search"
@@ -13,15 +13,15 @@ func (this *EsClient) Search() (Response, string) {
 
 	data, err := requests.PostRequest(url, query)
 	if err != nil {
-		return response, err.Error()
+		return response, err
 	}
 
 	err = json.Unmarshal(data, &response)
 	if err != nil {
-		return response, err.Error()
+		return response, err
 	}
 
-	return response, ""
+	return response, nil
 }
 
 type Response struct {
