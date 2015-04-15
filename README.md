@@ -1,13 +1,7 @@
 #Tools for ElasticSearch In Golang
 
-####Docker Container
-```
-docker run -t \
--v /home/core/share/codes/src/github.com/:/go/src/github.com/:rw \
---name githubDev -i \
--p 80:80 \
--d dev /bin/bash 
-```
+####Why
+Project Need a simple ElasticSearch Golang Tool, So i made one
 
 ####Usage
 
