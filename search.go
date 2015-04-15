@@ -37,11 +37,5 @@ type Response struct {
 		MaxScore float32       `json:"max_score"`
 		Hits     []interface{} `json:"hits"`
 	} `json:"hits"`
-	Aggregations struct {
-		Groupbyevent struct {
-			DocCountErrorUpperBound int           `json:"doc_count_error_upper_bound"`
-			SumOtherDocCount        int           `json:"sum_other_doc_count"`
-			Buckets                 []interface{} `json:"buckets"`
-		} `json:"groupbyevent"`
-	} `json:"aggregations"`
+	Aggregations interface{} `json:"aggregations"`
 }
